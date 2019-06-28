@@ -12,13 +12,10 @@ DATA_FOLDER = '../data/csv'
 MODELS_FOLDER = '../models'
 PIPELINE_BASE_NAME = 'transformer_pipeline'
 
-DATA = {'FOURIER': 'v000_SCIG_SC_SENSORA_FOURIER_chunk_90', 
-        'HOS': 'v000_SCIG_SC_SENSORA_HOS_chunk_90', 
-        'SCM': 'v000_SCIG_SC_SENSORA_SCM_chunk_90'}
+DATA = {'FOURIER': 'v000_SCIG_SC_SENSORC_FOURIER_010_chunk_90'}
 
-LABELS = {'FOURIER': 'v000_SCIG_SC_SENSORA_FOURIER_labels_chunk_90', 
-          'HOS': 'v000_SCIG_SC_SENSORA_HOS_labels_chunk_90', 
-          'SCM': 'v000_SCIG_SC_SENSORA_SCM_labels_chunk_90'}
+
+LABELS = {'FOURIER': 'v000_SCIG_SC_SENSORC_FOURIER_010_labels_chunk_90'}
 
 SEED = 6969
 

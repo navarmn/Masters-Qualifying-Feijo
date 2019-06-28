@@ -19,13 +19,9 @@ MODELS_FOLDER = '../models'
 PIPELINE_BASE_NAME = 'transformer_pipeline'
 CLASSIFIER_BASE_NAME = 'clf'
 
-DATA = {'FOURIER': 'v000_SCIG_SC_SENSORA_FOURIER_chunk_10', 
-        'HOS': 'v000_SCIG_SC_SENSORA_HOS_chunk_10', 
-        'SCM': 'v000_SCIG_SC_SENSORA_SCM_chunk_10'}
 
-LABELS = {'FOURIER': 'v000_SCIG_SC_SENSORA_FOURIER_labels_chunk_10', 
-          'HOS': 'v000_SCIG_SC_SENSORA_HOS_labels_chunk_10', 
-          'SCM': 'v000_SCIG_SC_SENSORA_SCM_labels_chunk_10'}
+DATA = {'FOURIER': 'v000_SCIG_SC_SENSORC_FOURIER_010_chunk_10'}      
+LABELS = {'FOURIER': 'v000_SCIG_SC_SENSORC_FOURIER_010_labels_chunk_90'}
 
 SEED = 6969
 
@@ -42,6 +38,7 @@ def print_metrics(y_true, y_hat):
    print('Accuracy: {}'.format(acc))
 
    pass   
+
 
 for feature_set in DATA.keys():
    logging.info('Feature set: {}'.format(feature_set))
