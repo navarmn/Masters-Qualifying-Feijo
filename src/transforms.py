@@ -278,4 +278,4 @@ class GetLables(TransformerMixin):
         return self
 
     def transform(self, df):
-        return df[df_features['Class']]
+        return df['Class'].values
