@@ -14,15 +14,21 @@ Clone the full repo and pay attention for the if the data folder follows the str
 1. Navigate to [src](src/) and setup the environment:
 
 ```shell
+cd src
 virtualenv -p python3.6 .env
 source .env/bin/activate
 pip install -r requirements.txt
 ```
 
-2. Run the following script
+2. Run the following script for a **single test**
 
 - `python test_clf.py` to print all metrics from the classifiers.
 
+
+3. Run the whole experinet script for a single test
+
+**INSIDE THE RASPBERRY PI OR JETSSON RUN THE FOLLOWING** 
+- `python run_experiment.py` to save all results under the [results dir](src/results/)
 
 
 ## More info:
