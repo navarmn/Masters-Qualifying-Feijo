@@ -62,7 +62,7 @@ def run(args):
                 it += 1
                 # X_test = X[test_index]
                 X_test = X.loc[test_index]
-                logging.debug('Test data \n {}'.format(X_test))
+                # logging.debug('Test data \n {}'.format(X_test))
                 logging.debug('Transforming data...'.format(classifier))
                 start_feat = time.time()
                 X_test = pipeline.transform(X_test)
@@ -80,7 +80,7 @@ def run(args):
                 time_array.append(end - start)
 
                 logging.debug('Calculating metrics... {}'.format(classifier))
-                print_metrics(y_test, y_hat)
+                # print_metrics(y_test, y_hat)
                 acc.append(accuracy_score(y_test, y_hat))
                 f1.append(f1_score(y_test, y_hat, average='weighted'))
                 precision.append(precision_score(y_test, y_hat, average='weighted'))
