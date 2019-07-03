@@ -20,9 +20,9 @@ def print_metrics(y_true, y_hat):
    
 
 
-def save_dict(d):
+def save_dict(d, folder):
    for feat in d.keys():
       for clf in d[feat].keys():
          df = pd.DataFrame(d[feat][clf]['conf'])
-         df.to_csv(join('results', 'conf_' + feat + '_' + clf + '.csv'))
+         df.to_csv(join(folder, 'conf_' + feat + '_' + clf + '.csv'))
          

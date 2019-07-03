@@ -138,7 +138,7 @@ def run(args):
     df_results.round(args['round']).to_csv(os.path.join(args['output'], 'results_acc.csv'))
     df_results_std.round(args['round']).to_csv(os.path.join(args['output'], 'results_std.csv'))
 
-    save_dict(RESULTS_conf)
+    save_dict(RESULTS_conf, args['output'])
 
 
 if __name__ == '__main__':
