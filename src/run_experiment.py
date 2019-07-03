@@ -25,9 +25,7 @@ from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_sc
 
 from config import *
 
-#
-if not os.path.exists('results'):
-    os.system('mkdir results')
+
 
 def run(args):
     for feature_set in DATA.keys():
@@ -41,8 +39,8 @@ def run(args):
         y = transforms.GetLables().fit_transform(data)
         # logging.debug(features.head())
         
-        skf = StratifiedKFold(n_splits=args['runs'], random_state=SEED)
-
+        skf = StratifiedKFold(n_splits=args['runs'], random_state=args['seed'], shuffle=True)
+        # skf = StratifiedKFold(n_splits=args['runs'])
         
         for classifier in CLASSIFIERS:
             logging.debug('classifier: {}'.format(classifier))
@@ -64,6 +62,7 @@ def run(args):
                 it += 1
                 # X_test = X[test_index]
                 X_test = X.loc[test_index]
+                logging.debug('Test data \n {}'.format(X_test))
                 logging.debug('Transforming data...'.format(classifier))
                 start_feat = time.time()
                 X_test = pipeline.transform(X_test)
@@ -133,11 +132,11 @@ def run(args):
         data = DATA_DF_STD,
     )
 
-    print(df_results.round(4))
+    print(df_results.round(args['round']))
 
 
-    df_results.round(4).to_csv(os.path.join('results', 'results_acc.csv'))
-    df_results_std.round(4).to_csv(os.path.join('results', 'results_std.csv'))
+    df_results.round(args['round']).to_csv(os.path.join(args['output'], 'results_acc.csv'))
+    df_results_std.round(args['round']).to_csv(os.path.join(args['output'], 'results_std.csv'))
 
     save_dict(RESULTS_conf)
 
@@ -145,5 +144,12 @@ def run(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--runs', default=MT_RUNS, type=int)
+    parser.add_argument('--round', default=ROUND, type=int)
+    parser.add_argument('--output', default=RESULTS_FOLDER, type=str)
+    parser.add_argument('--seed', default=SEED, type=str)
     args = vars(parser.parse_args())    
+    #
+    if not os.path.exists(args['output']):
+        os.system('mkdir {}'.format(args['output']))
+    #
     run(args)

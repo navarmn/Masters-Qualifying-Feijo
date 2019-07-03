@@ -30,6 +30,14 @@ pip install -r requirements.txt
 **INSIDE THE RASPBERRY PI OR JETSSON RUN THE FOLLOWING** 
 - `python run_experiment.py` to save all results under the [results dir](src/results/)
 
+You coulde set the parameters:
+- `--runs`: number of independent simulations (*default: 10*);
+- `--round`: approximate number to the follow (*default: 4*);
+- `--output`: folder wherein the results ought to be stored (*default: under ../results*);
+- `--seed`: seed to set for the simulation (*default: np.random state*);
+
+Example: `python run_experiment.py --runs 50`
+
 
 ## More info:
 

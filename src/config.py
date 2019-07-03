@@ -1,5 +1,9 @@
+import datetime
+import numpy as np
+
 DATA_FOLDER = '../data/csv'
 MODELS_FOLDER = '../models'
+RESULTS_FOLDER = '../results'
 PIPELINE_BASE_NAME = 'transformer_pipeline'
 CLASSIFIER_BASE_NAME = 'clf'
 
@@ -11,8 +15,9 @@ DATA = {
 
 # LABELS = {'FOURIER': 'v000_SCIG_SC_SENSORC_FOURIER_010_labels_chunk_90'}
 
-SEED = 1879287912
-MT_RUNS = 5
+SEED = np.random.randint(9999)
+MT_RUNS = 10
+ROUND = 10
 
 CLASSIFIERS = {'mlp', 'svm', 'knn','naive_bayes'}
 
