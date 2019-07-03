@@ -1,5 +1,7 @@
 import numpy as np
+import pandas as pd
 from sklearn.metrics import confusion_matrix, accuracy_score
+from os.path import join
 
 
 def percentage_confusion_matrix(confMat):
@@ -15,3 +17,12 @@ def print_metrics(y_true, y_hat):
    print('Accuracy: {}'.format(acc))
 
    pass 
+   
+
+
+def save_dict(d):
+   for feat in d.keys():
+      for clf in d[feat].keys():
+         df = pd.DataFrame(d[feat][clf]['conf'])
+         df.to_csv(join('results', 'conf_' + feat + '_' + clf + '.csv'))
+         
