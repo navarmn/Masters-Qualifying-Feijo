@@ -1,3 +1,23 @@
+DATA_FOLDER = '../data/csv'
+MODELS_FOLDER = '../models'
+PIPELINE_BASE_NAME = 'transformer_pipeline'
+CLASSIFIER_BASE_NAME = 'clf'
+
+DATA = {
+         'FOURIER': 'v000_SCIG_SC_SENSORA_FOURIER',
+         'HOS': 'v000_SCIG_SC_SENSORA_HOS',
+         'SCM': 'v000_SCIG_SC_SENSORA_SCM',
+      }
+
+# LABELS = {'FOURIER': 'v000_SCIG_SC_SENSORC_FOURIER_010_labels_chunk_90'}
+
+SEED = 1879287912
+MT_RUNS = 5
+
+CLASSIFIERS = {'mlp', 'svm', 'knn','naive_bayes'}
+
+
+
 RESULTS = {
     'FOURIER': {
         'mlp':{
