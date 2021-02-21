@@ -22,7 +22,7 @@ pip install -r requirements.txt
 
 2. Run the following script for a **single test**
 
-- `python test_clf.py` to print all metrics from the classifiers.
+- `python teste_clf.py` to print all metrics from the classifiers.
 
 
 3. Run the whole experinet script for a single test
